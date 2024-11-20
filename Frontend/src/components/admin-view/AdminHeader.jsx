@@ -14,20 +14,12 @@ function AdminHeader({setOpen}) {
    const {toast} = useToast();
 
    function handleLogOut() {
-      dispatch(logoutUser()).then((data) => {
-         if(data?.payload?.success) {
-            toast({
-               title: data?.payload?.message
-            })
-         }
-         else{
-          toast({
-            title: data?.payload?.message,
-            variant:'destructive',
-            action: <ToastAction altText="Try again">Try again</ToastAction>
-          })
-         }
+    dispatch(resetTokenAndCredentials()).then(
+      toast({
+          title: "Logged Out Successfully!"
       })
+    )
+    navigate('/auth/login')
    }
 
   return ( 

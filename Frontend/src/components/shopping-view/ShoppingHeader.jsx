@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
 } from "../ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "../ui/avatar";
-import { logoutUser } from "@/store/authSlice";
+import { logoutUser, resetTokenAndCredentials } from "@/store/authSlice";
 import { useToast, } from "../ui/use-toast";
 import { ToastAction } from "../ui/toast";
 import UserCartWrapper from "./CartWrapper";
@@ -63,27 +63,18 @@ function HeaderRightContent() {
   const {toast} = useToast()
   const [openCartSheet, setOpenCartSheet] = useState(false);
   const {cartItems} = useSelector(state => state.cartProducts)
-
+  
   useEffect(() => {
      dispatch(fetchCartItems(user?.id))
   },[dispatch])
 
   function handleLogOut() {
-    dispatch(logoutUser()).then((data) => {
-       console.log(data,"Data Data")
-       if(data?.payload?.success) {
-          toast({
-             title: data?.payload?.message
-          })
-       }
-       else{
+    dispatch(resetTokenAndCredentials()).then(
         toast({
-          title: data?.payload?.message,
-          variant:'destructive',
-          action: <ToastAction altText="Try again">Try again</ToastAction>
+            title: "Logged Out Successfully!"
         })
-       }
-    })
+    )
+    navigate('/auth/login')
  }
 
   return (

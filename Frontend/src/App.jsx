@@ -27,9 +27,10 @@ function App() {
   
   const {user, isAuthenticated, isLoading} = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const token = JSON.parse(sessionStorage.getItem('token'));
 
   useEffect(() => {
-    dispatch(checkAuth());
+    dispatch(checkAuth(token));
   }, [dispatch])
 
   if(isLoading) {
