@@ -1,0 +1,33 @@
+1. E:\01. Projects\ShopStream\Frontend\src\components\admin-view\AdminHeader.jsx
+
+Backend\controllers\shop\order.controller.js
+Backend\controllers\shop\review.controller.js
+
+Discord Clone -> 37 Chapters
+
+
+TODO:
+
+1. Backend\controllers\admin\products.controller.js\handleimageUpload
+   (i) Backend\helpers\cloudinary.js
+
+2. Backend\controllers\auth\auth.controller.js -> JWT✅
+
+3. E:\01. Projects\ShopStream\Backend\controllers\shop\cart.controller.js ✅
+
+4. Backend\controllers\shop\order.controller.js ✅
+   (i) Backend\helpers\paypal.js
+
+5. Backend\controllers\shop\product.controller.js✅
+6. Backend\controllers\shop\search.controller.js ✅
+
+7. server.js ✅
+
+--------------------------------------------------
+
+1. Frontend\src\store\authSlice\index.js ✅
+2. Frontend\src\store\shop\orderSlice\index.js✅
+4. Frontend\src\store\shop\productSlice\index.js ✅
+3. Frontend\src\store\store.js ✅
+4. Frontend\src\Pages\shopping-view\ShoppingListing.jsx ✅
+5. Frontend\src\Pages\shopping-view\PaypalReturn.jsx ✅
